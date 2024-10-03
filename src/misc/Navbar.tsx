@@ -1,3 +1,4 @@
+import { useState } from "react";
 import Button from "./Button";
 import "./Navbar.css";
 
@@ -28,9 +29,18 @@ function Navbar(props: {
         },
     ]
 
+    const [menuOpen, setMenuOpen] = useState(false);
+
+    const toggleMenu = () => {
+        setMenuOpen(!menuOpen);
+    };
+
     return <>
         <nav id="navbar">
-            <div className="items">
+            <div className="hamburger" onClick={toggleMenu}>
+                &#9776;
+            </div>
+            <div className={`items ${menuOpen ? 'open' : ''}`}>
                 {navbarItems.map((item, index) => {
                     return <NavbarItem key={index} title={item.title} link={item.link} selected={props.selected === index} />
                 })}

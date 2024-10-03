@@ -1,0 +1,44 @@
+#navbar {
+    display: flex;
+    justify-content: center;
+    
+    width: 100vw;
+}
+
+#navbar .items {
+    width: 30%;
+
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    flex-direction: row;
+}
+
+#navbar .items .item {
+    padding-top: 20px;
+
+    font-size: 20px;
+}
+
+#navbar .items .item:after {
+    content: '';
+    display: block;
+    width: 0;
+    height: 2px;
+    background-color: #000;
+    transition: width .3s;
+}
+
+#navbar .items .item:hover:after {
+    width: 100%;
+}
+
+#navbar .items .item.selected {
+    font-weight: bold;
+}
+
+#navbar .book {
+    position: absolute;
+    right: 10%;
+    top: 15px;
+}

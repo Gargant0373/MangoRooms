@@ -1,0 +1,18 @@
+.button {
+    width: auto;
+    padding: 15px 15px;
+
+    background-color: #28887A;
+    color: #FFF;
+    border: 1px solid #FFF;
+
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    white-space: nowrap;
+
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.button:hover {
+    background-color: #1F6F63;
+    transform: translateY(-2px);
+}

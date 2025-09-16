@@ -1,0 +1,115 @@
+.booking-form {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 16px 20px;
+
+    width: 100%;
+    max-width: 900px;
+    margin: 0 auto;
+    align-items: start;
+}
+
+/* Each field wrapper */
+.booking-form > div {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+    width: 100%;
+}
+
+.booking-form label {
+    font-size: 18px;
+    color: var(--gray);
+}
+
+/* Ensure text inputs/textarea fill width but not checkboxes */
+.booking-form input:not([type="checkbox"]),
+.booking-form textarea {
+    width: 100%;
+    padding: 10px;
+    border-radius: 5px;
+    border: 1px solid var(--gray);
+    box-sizing: border-box;
+
+    font-size: 16px;
+    background-color: var(--light-orange);
+    color: var(--white);
+}
+
+/* Focus only for text-like inputs/textarea */
+.booking-form input:not([type="checkbox"]):focus,
+.booking-form textarea:focus {
+    outline: none;
+    border-color: var(--orange);
+}
+
+/* Checkbox sizing & alignment */
+.booking-form__checkbox {
+    width: auto;
+    height: 18px;
+    accent-color: var(--dark-orange);
+}
+
+/* Make Email row span full width so it isn't cramped */
+.booking-form > div:nth-of-type(7) {
+    grid-column: 1 / -1;
+}
+
+/* Make long rows span full width (Description, Terms) */
+.booking-form > div:nth-of-type(8),
+.booking-form > div:nth-of-type(9) {
+    grid-column: 1 / -1;
+}
+
+/* Terms row horizontally aligned */
+.booking-form > div:nth-of-type(9) {
+    flex-direction: row;
+    align-items: center;
+    gap: 10px;
+}
+
+/* Captcha centered and full-width */
+.booking-form .captcha-container {
+    grid-column: 1 / -1;
+    display: flex;
+    justify-content: center;
+}
+
+/* Submit button centered and consistent size */
+.booking-form button {
+    padding: 10px;
+    border-radius: 5px;
+    border: none;
+
+    width: 160px;
+    justify-self: center;
+    grid-column: 1 / -1;
+    
+    background-color: var(--light-orange);
+    color: var(--white);
+    
+    font-size: 18px;
+    cursor: pointer;
+
+    transition: background-color 0.3s, transform 0.1s;
+}
+
+.booking-form button:hover {
+    transform: scale(1.02);
+    background-color: var(--dark-orange);
+}
+
+.booking-form button:active {
+    transform: scale(0.98);
+    background-color: var(--orange);
+}
+
+/* Small screens: ensure comfortable spacing */
+@media (max-width: 480px) {
+    .booking-form {
+        gap: 12px 16px;
+    }
+    .booking-form label {
+        font-size: 16px;
+    }
+}

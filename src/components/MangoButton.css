@@ -1,0 +1,44 @@
+.mango-button {
+    z-index: 4;
+    width: 100%;
+    max-width: 150px;
+    height: 50px;
+
+    background-color: var(--dark-orange);
+    color: var(--white);
+
+    border: none;
+    border-radius: 25px;
+
+    font-family: "Lato", serif;
+    font-weight: 600;
+
+    transition: all 0.2s ease;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.mango-button:hover {
+    background-color: var(--white);
+    color: var(--dark-orange);
+    transform: scale(1.05);
+}
+
+.mango-button:active {
+    transform: scale(0.95);
+}
+
+@media (max-width: 768px) {
+    .mango-button {
+        max-width: 120px;
+        height: 45px;
+        font-size: 0.9rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .mango-button {
+        max-width: 100px;
+        height: 40px;
+        font-size: 0.8rem;
+    }
+}

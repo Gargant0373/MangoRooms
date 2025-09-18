@@ -65,6 +65,7 @@
         position: absolute;
         top: 0;
         left: 0;
+        right: 0;
 
         box-shadow: 0 6px 18px rgba(0,0,0,0.18);
         border-bottom-right-radius: 12px;

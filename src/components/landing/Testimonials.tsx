@@ -3,20 +3,24 @@ import "./Testimonials.css";
 
 const testimonials = [
     {
+        name: "Ionut Rotaru",
+        text: "The place was amazing and so were the hosts."
+    },
+    {
         name: "Alexander the Great",
         text: "I conquered the world, but nothing compares to the taste of this mango.",
     },
     {
-        name: "Cleopatra",
-        text: "The sweetness of this mango is as captivating as the Nile.",
+        name: "Victor Mazilescu",
+        text: "Beautiful hosts and great location. Fair prices, clean and welcoming!"
     },
     {
         name: "Julius Caesar",
         text: "Veni, Vidi, Mango! I came, I saw, I tasted the best mango.",
     },
     {
-        name: "Hannibal",
-        text: "Crossing the Alps was easy compared to finding a mango this good.",
+        name: "Patricia Istrate",
+        text: "Perfect place to stay in Brașov. I will definitely come back here again."
     }
 ];
 

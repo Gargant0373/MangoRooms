@@ -9,13 +9,13 @@ const notes = [
     {
         title: "Location",
         description: "Located in the heart of Brasov, we are a walk away from the city center. Indoor parking can be arranged.",
-        image: "./images/kitchen.jpg",
+        image: "/images/kitchen.jpg",
         redirect: "/about"
     },
     {
         title: "Rooms",
         description: "We offer a variety of cozy rooms to suit your family or yourself after a long day, each one with a private bathroom.",
-        image: "./images/balcony.jpg",
+        image: "/images/balcony.jpg",
         redirect: "/rooms"
     }
 ]

@@ -11,7 +11,7 @@ function Contact() {
             <meta name="description" content="Get in touch with MangoRooms: address, phone, email, and booking request form." />
             <link rel="canonical" href="/contact" />
         </Helmet>
-        <Hero image="./images/about.jpeg" description="Should I stay or should I manGO?" />
+        <Hero image="./images/contact.webp" description="Should I stay or should I manGO?" />
         <section id="contact">
         <div className="text">
                 <h3>Do not hesitate to ask!</h3>

@@ -35,7 +35,7 @@ const rooms: RoomProp[] = [
             Facilities.BATHTUB,
             Facilities.SHOWER
         ],
-        images: ["1_1.jpg", "1_2.jpg", "1_3.jpg", "1_4.jpg"]
+        images: ["1_1.webp", "1_2.webp", "1_3.webp", "1_4.webp"]
     },
     {
         name: "Grand Mango II",
@@ -49,7 +49,7 @@ const rooms: RoomProp[] = [
             Facilities.BATHTUB,
             Facilities.SHOWER
         ],
-        images: ["2_1.jpg", "2_2.jpg", "2_3.jpg", "2_4.jpg"]
+        images: ["2_1.webp", "2_2.webp", "2_3.webp", "2_4.webp"]
     },
     {
         name: "Mango I",
@@ -62,7 +62,7 @@ const rooms: RoomProp[] = [
             Facilities.DESK,
             Facilities.SHOWER
         ],
-        images: ["3_1.jpg", "3_2.jpg", "3_3.jpg", "3_4.jpg"]
+        images: ["3_1.webp", "3_2.webp", "3_3.webp", "3_4.webp"]
     },
     {
         name: "Mango II",
@@ -75,7 +75,7 @@ const rooms: RoomProp[] = [
             Facilities.DESK,
             Facilities.SHOWER
         ],
-        images: ["4_1.jpg", "4_2.jpg", "4_3.jpg"]
+        images: ["4_1.webp", "4_2.webp", "4_3.webp"]
     },
     {
         name: "Petite Mango",
@@ -88,7 +88,7 @@ const rooms: RoomProp[] = [
             Facilities.DESK,
             Facilities.SHOWER
         ],
-        images: ["5_1.jpg", "5_2.jpg", "5_3.jpg"]
+        images: ["5_1.webp", "5_2.webp", "5_3.webp"]
     }
 ];
 
@@ -99,7 +99,7 @@ function Rooms() {
             <meta name="description" content="Explore our cozy rooms with private bathrooms and amenities like Wi‑Fi and TV. Perfect for families and solo travelers." />
             <link rel="canonical" href="/rooms" />
         </Helmet>
-        <Hero image="./images/rooms.jpg" description="Your home in Brasov!" />
+        <Hero image="./images/rooms.webp" description="Your home in Brasov!" />
         <section id="rooms">
             <div className="text">
                 <h3>Cozy, clean and ready for you!</h3>

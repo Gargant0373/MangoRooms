@@ -9,13 +9,13 @@ const notes = [
     {
         title: "Location",
         description: "Located in the heart of Brasov, we are a walk away from the city center. Indoor parking can be arranged.",
-        image: "/images/kitchen.jpg",
+        image: "/images/kitchen.webp",
         redirect: "/about"
     },
     {
         title: "Rooms",
         description: "We offer a variety of cozy rooms to suit your family or yourself after a long day, each one with a private bathroom.",
-        image: "/images/balcony.jpg",
+        image: "/images/balcony.webp",
         redirect: "/rooms"
     }
 ]
@@ -28,7 +28,7 @@ function Landing() {
             <meta name="description" content="Motorcycle friendly guesthouse in Brașov. Comfortable rooms with private bathrooms and great location." />
             <link rel="canonical" href="/" />
         </Helmet>
-        <Hero image="./images/landing.jpg" description="The definition of cozy!" />
+        <Hero image="./images/landing.webp" description="The definition of cozy!" />
         <section id="landing">
             <div className="text">
                 <h3>Motorcycle friendly guesthouse in Brasov!</h3>

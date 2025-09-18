@@ -3,6 +3,7 @@
     background: transparent;
     z-index: 10;
 
+    position: relative;
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -40,6 +41,10 @@
     border: none;
     cursor: pointer;
     color: var(--white);
+    margin: 0; /* remove unexpected top margin */
+    padding: 8px 10px; /* consistent tap target */
+    height: auto;
+    line-height: 1;
 }
 
 .hamburger:focus {
@@ -47,35 +52,110 @@
 }
 
 @media (max-width: 768px) {
+
     .nav-links {
         display: none;
     }
 
+    /* Full-screen centered overlay for mobile (use viewport height) */
     .nav-links.open {
-        background-color: var(--white);
-        width: 40%;
-
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        flex-direction: column;
-
-        padding: 50px 0;
-        margin: 0;
-        position: absolute;
+        position: fixed;
         top: 0;
         left: 0;
         right: 0;
+        height: 100vh;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        gap: 2rem;
 
-        box-shadow: 0 6px 18px rgba(0,0,0,0.18);
-        border-bottom-right-radius: 12px;
+        padding: 2rem;
+        background: rgba(0,0,0,0.86);
+        color: var(--white);
+        z-index: 1000;
+
+        overflow-y: auto;
+        -webkit-overflow-scrolling: touch;
+        opacity: 1;
+        transform: translateY(0);
+        transition: opacity 0.25s ease, transform 0.25s ease;
+        margin: 0;
+    }
+
+    .nav-links.open {
+        backdrop-filter: blur(6px);
+        -webkit-backdrop-filter: blur(6px);
+        animation: menu-in 220ms ease both;
+    }
+
+    @keyframes menu-in {
+        from { opacity: 0; transform: scale(0.98) translateY(-6px); }
+        to { opacity: 1; transform: scale(1) translateY(0); }
     }
 
     .nav-links a {
-        color: var(--dark-orange);
+        color: var(--white);
+        font-size: 1.25rem;
+        text-decoration: none;
+    }
+
+    /* Close button shown inside the overlay */
+    .nav-links .close-btn {
+        position: absolute;
+        top: 14px;
+        right: 14px;
+        background: none;
+        border: none;
+        color: var(--white);
+        font-size: 1.75rem;
+        cursor: pointer;
+    }
+
+    .hamburger {
+        display: inline-flex;
+        flex-direction: column;
+        justify-content: center;
+        gap: 8px;
+        width: 48px;
+        height: 44px;
+        padding: 6px;
+        background: transparent;
+        overflow: visible;
+    }
+
+    .hamburger .bar {
+        display: block;
+        height: 2px;
+        background: var(--white);
+        border-radius: 2px;
+        transition: transform 180ms cubic-bezier(.2,.9,.2,1), opacity 120ms ease, background-color 120ms ease;
+        transform-origin: center;
+        margin-bottom: 2px;
+    }
+
+    .hamburger .bar-1 { width: 22px; }
+    .hamburger .bar-2 { width: 18px; }
+    .hamburger .bar-3 { width: 22px; }
+
+    /* Morph to X when open */
+    .hamburger.is-open .bar-1 {
+        transform: translateY(6px) rotate(45deg);
+        width: 22px;
+    }
+    .hamburger.is-open .bar-2 {
+        opacity: 0;
+        transform: scaleX(0.2);
+    }
+    .hamburger.is-open .bar-3 {
+        transform: translateY(-6px) rotate(-45deg);
+        width: 22px;
     }
 
     .hamburger {
         display: block;
+        z-index: 1101;
+        position: relative;
+        align-self: center;
     }
 }

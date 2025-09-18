@@ -46,8 +46,6 @@
         flex-direction: column-reverse;
         gap: 20px;
         padding: 20px 0;
-        border-top: 1px solid var(--gray);
-        border-bottom: 1px solid var(--gray);
 
         width: 92%;
     }
@@ -63,5 +61,9 @@
 
     .note .right img {
         height: auto;
+    }
+
+    .note .mango-button {
+        align-self: center;
     }
 }

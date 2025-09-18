@@ -9,7 +9,7 @@ const notes = [
     {
         title: "Location",
         description: "Located in the heart of Brasov, we are a walk away from the city center. Indoor parking can be arranged.",
-        image: "./images/landing.jpg",
+        image: "./images/landing2.jpg",
         redirect: "/about"
     },
     {

@@ -21,11 +21,6 @@ pnpm-debug.log*
 .idea
 .DS_Store
 
-# Environment files (keep secrets out of images)
-.env
-.env.*
-!.env.example
-
 # Misc caches
 coverage
 .cache

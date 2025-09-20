@@ -3,6 +3,7 @@ import Footer from "../components/Footer";
 import Hero from "../components/Hero";
 import Note from "../components/landing/Note";
 import Testimonials from "../components/landing/Testimonials";
+import Map from "../components/landing/Map";
 import "./Landing.css";
 
 const notes = [
@@ -43,6 +44,7 @@ function Landing() {
                 ))}
             </div>
             <Testimonials />
+            <Map />
             <Footer />
         </section>
     </>

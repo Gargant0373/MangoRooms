@@ -35,12 +35,14 @@ const BookingForm: React.FC = () => {
             return;
         }
 
-        if (!captchaToken) {
+        if (siteKey && !captchaToken) {
             alert('Please complete the reCAPTCHA.');
             return;
         }
 
-        const emailData = { ...data, 'g-recaptcha-response': captchaToken };
+        const emailData = siteKey ? 
+            { ...data, 'g-recaptcha-response': captchaToken } : 
+            { ...data };
 
         emailjs.send(serviceID, templateID, emailData, userID)
             .then(() => {
@@ -110,12 +112,14 @@ const BookingForm: React.FC = () => {
                     {errors.terms && <p className="booking-form__error">You must agree to the terms and conditions</p>}
                 </div>
 
-                <div className="captcha-container">
-                    <ReCAPTCHA
-                        sitekey={siteKey}
-                        onChange={handleCaptchaChange}
-                    />
-                </div>
+                {siteKey && (
+                    <div className="captcha-container">
+                        <ReCAPTCHA
+                            sitekey={siteKey}
+                            onChange={handleCaptchaChange}
+                        />
+                    </div>
+                )}
 
                 <button type="submit" className="booking-form__button">Submit</button>
             </form>

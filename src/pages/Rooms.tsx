@@ -19,7 +19,8 @@ interface RoomProp {
     capacity: number,
     description: string;
     facilities: Facilities[],
-    images: string[]
+    images: string[],
+    kidsBed: boolean
 }
 
 const rooms: RoomProp[] = [
@@ -35,7 +36,8 @@ const rooms: RoomProp[] = [
             Facilities.BATHTUB,
             Facilities.SHOWER
         ],
-        images: ["1_1.webp", "1_2.webp", "1_3.webp", "1_4.webp"]
+        images: ["1_1.webp", "1_2.webp", "1_3.webp", "1_4.webp"],
+        kidsBed: true
     },
     {
         name: "Grand Mango II",
@@ -49,7 +51,8 @@ const rooms: RoomProp[] = [
             Facilities.BATHTUB,
             Facilities.SHOWER
         ],
-        images: ["2_1.webp", "2_2.webp", "2_3.webp", "2_4.webp"]
+        images: ["2_1.webp", "2_2.webp", "2_3.webp", "2_4.webp"],
+        kidsBed: true
     },
     {
         name: "Mango I",
@@ -62,7 +65,8 @@ const rooms: RoomProp[] = [
             Facilities.DESK,
             Facilities.SHOWER
         ],
-        images: ["3_1.webp", "3_2.webp", "3_3.webp", "3_4.webp"]
+        images: ["3_1.webp", "3_2.webp", "3_3.webp", "3_4.webp"],
+        kidsBed: false
     },
     {
         name: "Mango II",
@@ -75,11 +79,12 @@ const rooms: RoomProp[] = [
             Facilities.DESK,
             Facilities.SHOWER
         ],
-        images: ["4_1.webp", "4_2.webp", "4_3.webp"]
+        images: ["4_1.webp", "4_2.webp", "4_3.webp"],
+        kidsBed: false
     },
     {
         name: "Petite Mango",
-        description: "A delightful and compact room designed for maximum comfort. Ideal for solo travelers or couples looking for a budget-friendly yet stylish option.",
+        description: "A small, delightful room designed for maximum comfort in a compact space. Ideal for solo travelers or couples looking for a budget-friendly yet stylish option. Please note the beds are fixed and cannot be joined.",
         capacity: 2,
         facilities: [
             Facilities.WIFI,
@@ -88,7 +93,8 @@ const rooms: RoomProp[] = [
             Facilities.DESK,
             Facilities.SHOWER
         ],
-        images: ["5_1.webp", "5_2.webp", "5_3.webp"]
+        images: ["5_1.webp", "5_2.webp", "5_3.webp"],
+        kidsBed: false
     }
 ];
 
@@ -138,7 +144,7 @@ function Room(props: RoomProp) {
             <div className="room-details">
                 <h1>{props.name}</h1>
                 <p>{props.description}</p>
-                <p>This room can fit {props.capacity} people. (Extra beds for children possible)</p>
+                <p>This room can fit {props.capacity} people. {props.kidsBed ? "(Extra bed for children possible)" : "(No extra bed for children available)"}</p>
                 <ul>
                     {props.facilities.map((facility, index) => (
                         <li key={index}>{facility}</li>

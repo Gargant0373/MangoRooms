@@ -14,12 +14,16 @@ function Hero(props: HeroProps) {
     return <>
         <section id="hero">
             <Navbar />
-            <img src={props.image} alt={props.description || "MangoRooms hero image"} />
+            <img src={props.image} alt="MangoRooms guesthouse in Brașov" />
             <div className="text">
+                <p className="hero-eyebrow">Guesthouse · Brașov, Romania</p>
                 <h1>MangoRooms</h1>
-                <p>{props.description}</p>
+                <p className="hero-tagline">{props.description}</p>
+                <MangoButton text="Book Now!" onClick={() => navigate("/contact")} />
             </div>
-            <MangoButton text="Book Now!" onClick={() => navigate("/contact")} />
+            <div className="scroll-cue" aria-hidden="true">
+                <span className="scroll-cue-dot" />
+            </div>
         </section>
     </>
 }

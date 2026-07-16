@@ -7,31 +7,66 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 12px 0;
+    padding: 18px 0;
+
+    animation: fade-in 0.8s ease both;
 }
 
 .navbar .logo a {
     text-decoration: none;
+    font-family: var(--font-display);
     font-size: 1.5rem;
-    font-weight: bold;
+    font-weight: 700;
+    color: var(--orange);
+    text-shadow: 0 2px 12px rgba(0, 0, 0, 0.35);
+    transition: color 0.25s ease;
+}
+
+.navbar .logo a:hover {
     color: var(--dark-orange);
 }
 
 .nav-links {
     display: flex;
     list-style: none;
-    gap: 1.5rem;
+    gap: 2rem;
+    margin: 0;
+    padding: 0;
 }
 
 .nav-links a {
+    position: relative;
     text-decoration: none;
     font-size: 1rem;
+    font-weight: 600;
+    letter-spacing: 0.04em;
     color: var(--white);
-    transition: color 0.3s ease;
+    padding: 4px 0;
+    transition: color 0.25s ease;
+    text-shadow: 0 1px 8px rgba(0, 0, 0, 0.3);
+}
+
+/* Animated underline that grows from the left on hover */
+.nav-links a::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: -2px;
+    width: 100%;
+    height: 2px;
+    border-radius: 2px;
+    background: var(--dark-orange);
+    transform: scaleX(0);
+    transform-origin: left;
+    transition: transform 0.3s var(--ease-out);
 }
 
 .nav-links a:hover {
-    color: var(--dark-orange);
+    color: var(--orange);
+}
+
+.nav-links a:hover::after {
+    transform: scaleX(1);
 }
 
 .hamburger {
@@ -41,8 +76,8 @@
     border: none;
     cursor: pointer;
     color: var(--white);
-    margin: 0; /* remove unexpected top margin */
-    padding: 8px 10px; /* consistent tap target */
+    margin: 0;
+    padding: 8px 10px;
     height: auto;
     line-height: 1;
 }
@@ -68,25 +103,20 @@
         flex-direction: column;
         justify-content: center;
         align-items: center;
-        gap: 2rem;
+        gap: 2.25rem;
 
         padding: 2rem;
-        background: rgba(0,0,0,0.86);
+        background: rgba(15, 20, 16, 0.9);
         color: var(--white);
         z-index: 1000;
 
         overflow-y: auto;
         -webkit-overflow-scrolling: touch;
-        opacity: 1;
-        transform: translateY(0);
-        transition: opacity 0.25s ease, transform 0.25s ease;
         margin: 0;
-    }
 
-    .nav-links.open {
-        backdrop-filter: blur(6px);
-        -webkit-backdrop-filter: blur(6px);
-        animation: menu-in 220ms ease both;
+        backdrop-filter: blur(12px);
+        -webkit-backdrop-filter: blur(12px);
+        animation: menu-in 260ms var(--ease-out) both;
     }
 
     @keyframes menu-in {
@@ -94,9 +124,23 @@
         to { opacity: 1; transform: scale(1) translateY(0); }
     }
 
+    /* Stagger the links as the overlay opens */
+    .nav-links.open li {
+        opacity: 0;
+        animation: fade-up 0.45s var(--ease-out) forwards;
+    }
+
+    .nav-links.open li:nth-child(1) { animation-delay: 0.08s; }
+    .nav-links.open li:nth-child(2) { animation-delay: 0.16s; }
+    .nav-links.open li:nth-child(3) { animation-delay: 0.24s; }
+    .nav-links.open li:nth-child(4) { animation-delay: 0.32s; }
+
     .nav-links a {
         color: var(--white);
-        font-size: 1.25rem;
+        font-size: 1.4rem;
+        font-family: var(--font-display);
+        font-weight: 500;
+        letter-spacing: 0.02em;
         text-decoration: none;
     }
 

@@ -1,6 +1,7 @@
 import Footer from "../components/Footer";
 import Hero from "../components/Hero";
 import { useState } from "react";
+import useScrollReveal from "../hooks/useScrollReveal";
 import "./Rooms.css";
 import { Helmet } from 'react-helmet-async'
 
@@ -56,7 +57,7 @@ const rooms: RoomProp[] = [
     },
     {
         name: "Mango I",
-        description: "A cozy and intimate room designed for couples or solo travelers. With a comfortable double bed and essential facilities, this room ensures a pleasant stay.",
+        description: "A cozy and intimate room designed for couples or solo travellers. With a comfortable double bed and essential facilities, it is a restful base after a day of exploring Brașov or riding through Transylvania.",
         capacity: 2,
         facilities: [
             Facilities.WIFI,
@@ -84,7 +85,7 @@ const rooms: RoomProp[] = [
     },
     {
         name: "Petite Mango",
-        description: "A small, delightful room designed for maximum comfort in a compact space. Ideal for solo travelers or couples looking for a budget-friendly yet stylish option. Please note the beds are fixed and cannot be joined.",
+        description: "A small, delightful room designed for maximum comfort in a compact space. Ideal for backpackers, solo travellers or friends looking for a budget-friendly yet stylish stay. Please note the beds are fixed and cannot be joined.",
         capacity: 2,
         facilities: [
             Facilities.WIFI,
@@ -99,16 +100,20 @@ const rooms: RoomProp[] = [
 ];
 
 function Rooms() {
+    useScrollReveal();
+
     return <>
         <Helmet>
-            <title>Rooms – MangoRooms Brașov</title>
-            <meta name="description" content="Explore our cozy rooms with private bathrooms and amenities like Wi‑Fi and TV. Perfect for families and solo travelers." />
-            <link rel="canonical" href="/rooms" />
+            <title>Cozy Rooms in Brașov – MangoRooms Guesthouse</title>
+            <meta name="description" content="Five cozy guesthouse rooms in Brașov, each with a private bathroom, Wi-Fi and TV. Options for families, couples, solo travellers and backpackers on a budget." />
+            <link rel="canonical" href="https://www.mangorooms.ro/rooms" />
         </Helmet>
         <Hero image="./images/rooms.webp" description="Your home in Brasov!" />
         <section id="rooms">
-            <div className="text">
+            <div className="text reveal">
+                <span className="kicker">Our rooms</span>
                 <h3>Cozy, clean and ready for you!</h3>
+                <p>Every room comes with a private bathroom, Wi-Fi and TV — whether you are a family on holiday, a couple, a backpacker or a rider passing through Brașov.</p>
             </div>
             <div className="rooms">
                 {rooms.map((room, index) => (
@@ -124,10 +129,18 @@ function Room(props: RoomProp) {
     const [selectedImage, setSelectedImage] = useState(props.images[0]);
 
     return <>
-        <div className="room">
+        <div className="room reveal">
             <div className="room-images">
                 <div className="main-image">
-                    <img src={`./images/rooms/${selectedImage}`} alt={props.name} />
+                    <img
+                        key={selectedImage}
+                        src={`./images/rooms/${selectedImage}`}
+                        alt={`${props.name} – cozy guesthouse room at MangoRooms Brașov`}
+                        loading="lazy"
+                    />
+                    <span className="capacity-badge">
+                        {props.capacity} {props.capacity === 1 ? "guest" : "guests"}
+                    </span>
                 </div>
                 <div className="thumbnail-images">
                     {props.images.map((image, index) => (
@@ -135,6 +148,7 @@ function Room(props: RoomProp) {
                             key={index}
                             src={`./images/rooms/${image}`}
                             alt={`${props.name} thumbnail ${index + 1}`}
+                            loading="lazy"
                             className={selectedImage === image ? "active" : ""}
                             onClick={() => setSelectedImage(image)}
                         />
@@ -144,7 +158,7 @@ function Room(props: RoomProp) {
             <div className="room-details">
                 <h1>{props.name}</h1>
                 <p>{props.description}</p>
-                <p>This room can fit {props.capacity} people. {props.kidsBed ? "(Extra bed for children possible)" : "(No extra bed for children available)"}</p>
+                <p className="room-extra">{props.kidsBed ? "Extra bed for children available on request." : "No extra bed for children available."}</p>
                 <ul>
                     {props.facilities.map((facility, index) => (
                         <li key={index}>{facility}</li>

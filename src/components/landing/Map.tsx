@@ -2,9 +2,9 @@ import "./Map.css";
 
 function Map() {
     return (
-        <section id="map">
-            <h1>Find us</h1>
-            <h2>LOCATION</h2>
+        <section id="map" className="reveal">
+            <span className="kicker">Location</span>
+            <h2>Find us in Brașov</h2>
             <div className="map-frame">
                 <iframe
                     title="Google map - Mango Rooms Brașov"

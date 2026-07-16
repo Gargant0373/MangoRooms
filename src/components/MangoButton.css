@@ -1,44 +1,65 @@
 .mango-button {
+    position: relative;
     z-index: 4;
-    width: 100%;
-    max-width: 150px;
-    height: 50px;
+    overflow: hidden;
 
-    background-color: var(--dark-orange);
-    color: var(--white);
+    padding: 0 32px;
+    height: 52px;
+
+    background: linear-gradient(135deg, var(--dark-orange) 0%, var(--orange) 100%);
+    color: #fff;
 
     border: none;
-    border-radius: 25px;
+    border-radius: 999px;
 
-    font-family: "Lato", serif;
-    font-weight: 600;
+    font-family: var(--font-body);
+    font-weight: 700;
+    font-size: 1rem;
+    letter-spacing: 0.04em;
+    cursor: pointer;
 
-    transition: all 0.2s ease;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition:
+        transform 0.25s var(--ease-out),
+        box-shadow 0.25s var(--ease-out);
+    box-shadow: 0 4px 14px rgba(255, 140, 0, 0.3);
+}
+
+/* Shine that sweeps across on hover */
+.mango-button::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: -80%;
+    width: 50%;
+    height: 100%;
+    background: linear-gradient(
+        105deg,
+        transparent 0%,
+        rgba(255, 255, 255, 0.35) 50%,
+        transparent 100%
+    );
+    transform: skewX(-20deg);
+    transition: left 0.5s var(--ease-out);
 }
 
 .mango-button:hover {
-    background-color: var(--white);
-    color: var(--dark-orange);
-    transform: scale(1.05);
+    transform: translateY(-2px) scale(1.03);
+    box-shadow: var(--shadow-orange);
+}
+
+.mango-button:hover::before {
+    left: 130%;
 }
 
 .mango-button:active {
-    transform: scale(0.95);
+    transform: translateY(0) scale(0.97);
+    box-shadow: 0 2px 8px rgba(255, 140, 0, 0.3);
 }
 
 @media (max-width: 768px) {
     .mango-button {
-        max-width: 120px;
-        height: 45px;
+        padding: 0 26px;
+        height: 46px;
         font-size: 0.9rem;
-    }
-}
-
-@media (max-width: 480px) {
-    .mango-button {
-        max-width: 100px;
-        height: 40px;
-        font-size: 0.8rem;
     }
 }

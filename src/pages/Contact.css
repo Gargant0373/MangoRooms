@@ -3,59 +3,122 @@
     flex-direction: column;
     align-items: center;
 
-    padding-top: 20px;
+    gap: 44px;
+    padding-top: 60px;
     padding-bottom: 0px;
 }
 
+/* Contact info cards */
 #contact .info {
-    width: min(900px, 92%);
-    margin: 2rem auto;
-    padding: 1rem 0;
+    display: flex;
+    justify-content: center;
+    gap: 24px;
+    flex-wrap: wrap;
 
-    margin-top: 3rem;
-    padding-top: 1rem;
-    border-top: 1px solid var(--green);
-
-    margin-bottom: 3rem;
-    padding-bottom: 1rem;
-    border-bottom: 1px solid var(--green);
+    width: min(1040px, 92%);
 }
 
-#contact .info p {
-    margin: 0.25rem 0;
-}
+#contact .info-card {
+    flex: 1;
+    min-width: 240px;
 
-#contact .info a {
-    color: var(--green);
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+
+    padding: 28px 26px;
+
+    background: var(--surface);
+    border-radius: var(--radius-md);
+    box-shadow: var(--shadow-sm);
     text-decoration: none;
+
+    transition:
+        transform 0.35s var(--ease-out),
+        box-shadow 0.35s var(--ease-out);
 }
 
-#contact .info .map {
+#contact .info-card:hover {
+    transform: translateY(-4px);
+    box-shadow: var(--shadow-md);
+}
+
+#contact .info-card:nth-child(1) { --reveal-delay: 0s; }
+#contact .info-card:nth-child(2) { --reveal-delay: 0.12s; }
+#contact .info-card:nth-child(3) { --reveal-delay: 0.24s; }
+
+#contact .info-card-label {
+    font-size: 0.78rem;
     font-weight: 700;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: var(--dark-orange);
+    margin-bottom: 8px;
+}
+
+#contact .info-card-value {
+    color: var(--ink);
+    font-size: 1rem;
+    line-height: 1.5;
+    overflow-wrap: anywhere;
+}
+
+#contact .info-card-hint {
+    margin-top: 12px;
+    font-weight: 700;
+    font-size: 0.9rem;
+    color: var(--green);
+    transition: color 0.25s ease;
+}
+
+#contact .info-card:hover .info-card-hint {
+    color: var(--dark-orange);
+}
+
+/* Booking form card */
+#contact .booking-card {
+    width: min(960px, 92%);
+    padding: 44px 40px 48px;
+    margin-bottom: 30px;
+
+    background: var(--surface);
+    border-radius: var(--radius-lg);
+    box-shadow: var(--shadow-md);
+
+    text-align: center;
+}
+
+#contact .booking-card h2 {
+    margin: 0 0 8px;
+    font-family: var(--font-display);
+    font-weight: 700;
+    color: var(--green);
+    font-size: clamp(1.35rem, 1rem + 1.2vw, 1.8rem);
+}
+
+#contact .booking-card > p {
+    margin: 0 auto 32px;
+    max-width: 520px;
+    color: var(--ink-soft);
 }
 
 @media (max-width: 768px) {
-  #contact {
-    padding-top: 10px;
-  }
+    #contact {
+        padding-top: 40px;
+        gap: 32px;
+    }
 
-  #contact .info {
-    margin: 1.5rem auto;
-  }
-}
+    #contact .info {
+        gap: 14px;
+    }
 
-/* Improve contact layout on very small screens */
-@media (max-width: 480px) {
-  #contact .info {
-    width: 92%;
-    padding: 0.75rem 0.5rem;
-    box-sizing: border-box;
-  }
+    #contact .info-card {
+        min-width: 100%;
+        padding: 22px;
+        --reveal-delay: 0s !important;
+    }
 
-  /* Make booking form fields stack nicely (uses existing BookingForm responsive grid) */
-  .booking-form {
-    width: 92%;
-    max-width: none;
-    margin: 0.5rem auto 1.25rem auto;
-  }
+    #contact .booking-card {
+        padding: 30px 20px 36px;
+    }
 }

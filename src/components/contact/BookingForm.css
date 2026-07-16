@@ -1,12 +1,13 @@
 .booking-form {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-    gap: 16px 20px;
+    gap: 18px 20px;
 
     width: 100%;
-    max-width: 900px;
+    max-width: 860px;
     margin: 0 auto;
     align-items: start;
+    text-align: left;
 }
 
 /* Each field wrapper */
@@ -18,36 +19,69 @@
 }
 
 .booking-form label {
-    font-size: 18px;
-    color: var(--gray);
+    font-size: 0.85rem;
+    font-weight: 700;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    color: var(--ink-soft);
 }
 
 /* Ensure text inputs/textarea fill width but not checkboxes */
 .booking-form input:not([type="checkbox"]),
 .booking-form textarea {
     width: 100%;
-    padding: 10px;
-    border-radius: 5px;
-    border: 1px solid var(--gray);
+    padding: 12px 14px;
+    border-radius: var(--radius-sm);
+    border: 1.5px solid rgba(41, 47, 48, 0.18);
     box-sizing: border-box;
 
-    font-size: 16px;
-    background-color: var(--light-orange);
-    color: var(--white);
+    font-family: var(--font-body);
+    font-size: 1rem;
+    background-color: var(--white);
+    color: var(--ink);
+
+    transition:
+        border-color 0.25s ease,
+        box-shadow 0.25s ease;
+}
+
+.booking-form input::placeholder,
+.booking-form textarea::placeholder {
+    color: rgba(41, 47, 48, 0.4);
+}
+
+.booking-form textarea {
+    min-height: 110px;
+    resize: vertical;
 }
 
 /* Focus only for text-like inputs/textarea */
 .booking-form input:not([type="checkbox"]):focus,
 .booking-form textarea:focus {
     outline: none;
-    border-color: var(--orange);
+    border-color: var(--dark-orange);
+    box-shadow: 0 0 0 4px rgba(255, 140, 0, 0.15);
 }
 
 /* Checkbox sizing & alignment */
 .booking-form__checkbox {
-    width: auto;
+    width: 18px;
     height: 18px;
     accent-color: var(--dark-orange);
+    cursor: pointer;
+}
+
+.booking-form__error {
+    margin: 0;
+    font-size: 0.85rem;
+    color: #c0392b;
+}
+
+.booking-form__terms .terms {
+    color: var(--dark-orange);
+    font-weight: 700;
+    cursor: pointer;
+    text-decoration: underline;
 }
 
 /* Make Email row span full width so it isn't cramped */
@@ -65,7 +99,16 @@
 .booking-form > div:nth-of-type(9) {
     flex-direction: row;
     align-items: center;
+    flex-wrap: wrap;
     gap: 10px;
+}
+
+.booking-form > div:nth-of-type(9) label {
+    text-transform: none;
+    letter-spacing: normal;
+    font-weight: 400;
+    font-size: 0.95rem;
+    color: var(--ink);
 }
 
 /* Captcha centered and full-width */
@@ -77,39 +120,42 @@
 
 /* Submit button centered and consistent size */
 .booking-form button {
-    padding: 10px;
-    border-radius: 5px;
+    position: relative;
+    padding: 0 40px;
+    height: 52px;
+    border-radius: 999px;
     border: none;
 
-    width: 160px;
     justify-self: center;
     grid-column: 1 / -1;
-    
-    background-color: var(--light-orange);
-    color: var(--white);
-    
-    font-size: 18px;
+
+    background: linear-gradient(135deg, var(--dark-orange) 0%, var(--orange) 100%);
+    color: #fff;
+
+    font-family: var(--font-body);
+    font-size: 1rem;
+    font-weight: 700;
+    letter-spacing: 0.04em;
     cursor: pointer;
 
-    transition: background-color 0.3s, transform 0.1s;
+    box-shadow: 0 4px 14px rgba(255, 140, 0, 0.3);
+    transition:
+        transform 0.25s var(--ease-out),
+        box-shadow 0.25s var(--ease-out);
 }
 
 .booking-form button:hover {
-    transform: scale(1.02);
-    background-color: var(--dark-orange);
+    transform: translateY(-2px) scale(1.02);
+    box-shadow: var(--shadow-orange);
 }
 
 .booking-form button:active {
-    transform: scale(0.98);
-    background-color: var(--orange);
+    transform: translateY(0) scale(0.98);
 }
 
 /* Small screens: ensure comfortable spacing */
 @media (max-width: 480px) {
     .booking-form {
-        gap: 12px 16px;
-    }
-    .booking-form label {
-        font-size: 16px;
+        gap: 14px 16px;
     }
 }

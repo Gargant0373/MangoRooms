@@ -4,47 +4,71 @@
     left: 0;
     width: 100%;
     height: 100%;
-    background-color: rgba(0, 0, 0, 0.5);
+    background-color: rgba(15, 20, 16, 0.6);
+    backdrop-filter: blur(6px);
+    -webkit-backdrop-filter: blur(6px);
     display: flex;
     justify-content: center;
     align-items: center;
     z-index: 1000;
+
+    animation: fade-in 0.25s ease both;
 }
 
 .terms-modal__content {
-    background: var(--white);
-    padding: 20px;
-    border-radius: 8px;
-    max-width: 600px;
+    background: var(--surface);
+    padding: 32px 30px;
+    border-radius: var(--radius-lg);
+    max-width: 640px;
     width: 90%;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    box-shadow: var(--shadow-lg);
     overflow-y: auto;
     max-height: 80%;
+    text-align: left;
+
+    animation: fade-up 0.35s var(--ease-out) both;
+}
+
+.terms-modal__content h2 {
+    margin: 0 0 20px;
+    font-family: var(--font-display);
+    font-weight: 700;
+    color: var(--green);
 }
 
 .terms-modal__title {
-    font-size: 1.5rem;
-    margin-bottom: 10px;
-    color: var(--gray);
+    font-size: 1.1rem;
+    font-weight: 700;
+    margin: 20px 0 8px;
+    color: var(--green);
 }
 
 .terms-modal__clause {
-    font-size: 1rem;
-    margin-bottom: 8px;
-    color: var(--dark-orange);
+    font-size: 0.95rem;
+    line-height: 1.6;
+    margin: 0 0 8px;
+    color: var(--ink-soft);
 }
 
 .terms-modal__close {
-    margin-top: 20px;
-    padding: 10px 20px;
-    background-color: var(--orange);
-    color: var(--white);
+    margin-top: 24px;
+    padding: 0 32px;
+    height: 46px;
+    background: linear-gradient(135deg, var(--dark-orange) 0%, var(--orange) 100%);
+    color: #fff;
     border: none;
-    border-radius: 4px;
+    border-radius: 999px;
     cursor: pointer;
     font-size: 1rem;
+    font-weight: 700;
+
+    box-shadow: 0 4px 14px rgba(255, 140, 0, 0.3);
+    transition:
+        transform 0.25s var(--ease-out),
+        box-shadow 0.25s var(--ease-out);
 }
 
 .terms-modal__close:hover {
-    background-color: var(--light-orange);
+    transform: translateY(-2px);
+    box-shadow: var(--shadow-orange);
 }

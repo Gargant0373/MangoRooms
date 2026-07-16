@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import "./Testimonials.css";
 
 const testimonials = [
@@ -24,25 +24,48 @@ const testimonials = [
     }
 ];
 
+const ROTATE_INTERVAL_MS = 6000;
+
 function Testimonials() {
     const [current, setCurrent] = useState(0);
+    const [paused, setPaused] = useState(false);
 
-    const handleClick = () => {
-        setCurrent((prev) => (prev + 1) % testimonials.length);
-    };
+    useEffect(() => {
+        if (paused) return;
+        const timer = setInterval(() => {
+            setCurrent((prev) => (prev + 1) % testimonials.length);
+        }, ROTATE_INTERVAL_MS);
+        return () => clearInterval(timer);
+    }, [paused]);
 
     const testimonial = testimonials[current];
 
     return <>
-        <section id="testimonials">
-            <h1>Customer</h1>
-            <h2>TESTIMONIALS</h2>
-            <div className="testimonial" onClick={handleClick}>
-                <div className="ghili">"  "</div>
-                <div className="text">
+        <section id="testimonials" className="reveal">
+            <span className="kicker">Guest stories</span>
+            <h2>What our guests say</h2>
+            <div
+                className="testimonial"
+                onMouseEnter={() => setPaused(true)}
+                onMouseLeave={() => setPaused(false)}
+            >
+                <div className="ghili" aria-hidden="true">“</div>
+                <div className="testimonial-body" key={current}>
                     <p>{testimonial.text}</p>
-                    <h3>{testimonial.name}</h3>
+                    <span className="testimonial-name">{testimonial.name}</span>
                 </div>
+            </div>
+            <div className="testimonial-dots" role="tablist" aria-label="Testimonials">
+                {testimonials.map((t, index) => (
+                    <button
+                        key={index}
+                        className={`dot ${index === current ? "active" : ""}`}
+                        aria-label={`Show testimonial from ${t.name}`}
+                        aria-selected={index === current}
+                        role="tab"
+                        onClick={() => setCurrent(index)}
+                    />
+                ))}
             </div>
         </section>
     </>

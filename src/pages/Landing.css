@@ -4,8 +4,18 @@
     align-items: center;
     justify-content: center;
 
-    gap: 56px;
+    gap: 72px;
     padding-bottom: 0px;
+}
+
+#landing .text p {
+    max-width: 680px;
+    margin: 16px auto 0;
+    padding: 0 20px;
+    text-align: center;
+    font-size: 1.06rem;
+    line-height: 1.7;
+    color: var(--ink-soft);
 }
 
 #landing .notes {
@@ -13,17 +23,17 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    gap: 56px;
+    gap: 64px;
 
-    width: min(1000px, 92%);
+    width: min(1040px, 92%);
 }
 
 @media (max-width: 768px) {
   #landing {
-    gap: 40px;
+    gap: 48px;
   }
   #landing .notes {
     width: 92%;
-    gap: 32px;
+    gap: 36px;
   }
 }

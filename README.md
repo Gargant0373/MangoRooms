@@ -48,7 +48,9 @@ Every push to `master` (or a manual run of the **Deploy** workflow) runs
    2. fetches `master` and runs `git reset --hard`. Untracked files such as `.env` stay;
    3. builds `mangorooms:<short-sha>` *before* touching the running container,
       so a failed build changes nothing on the live site;
-   4. replaces the `mangorooms` container, publishing host port 3001 to the container's port 3000;
+   4. replaces the `mangorooms` container, publishing `127.0.0.1:3001` to the
+      container's port 3000. Localhost only, because Docker-published ports
+      bypass ufw and would otherwise expose the origin around Cloudflare;
    5. checks health: `/` must return 200 and `/__deploy-check__` must return 404;
    6. rolls back to the previous image if that check fails;
    7. keeps the 3 newest `mangorooms` images and prunes build cache unused for
@@ -59,8 +61,7 @@ Every push to `master` (or a manual run of the **Deploy** workflow) runs
    homepage for every URL, which looks healthy because every URL returns 200.
 
 The script's defaults can be overridden with `MR_REPO_DIR` (`/root/MangoRooms`),
-`MR_CONTAINER` (`mangorooms`) and `MR_PUBLISH` (`3001`; `127.0.0.1:3001` also
-works).
+`MR_CONTAINER` (`mangorooms`) and `MR_PUBLISH` (`127.0.0.1:3001`).
 
 The [`Dockerfile`](Dockerfile) is multi-stage. The first stage runs `npm ci` and
 `npm run build`. The second ships only `dist/` and [`serve.json`](serve.json) with

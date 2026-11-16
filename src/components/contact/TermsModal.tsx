@@ -10,8 +10,8 @@ const termsData = [
     {
         title: "1. General information",
         clauses: [
-            "1.1 These Terms and Conditions govern the booking, stay, and use of services at LaDespani Guesthouse. By making a booking, guests agree to comply with these terms.",
-            "1.2 LaDespani Guesthouse is located at Mihai Viteazul 128, Brasov, Romania.",
+            "1.1 These Terms and Conditions govern the booking, stay, and use of services at MangoRooms Guesthouse. By making a booking, guests agree to comply with these terms.",
+            "1.2 MangoRooms Guesthouse is located at Mihai Viteazul 128, Brasov, Romania.",
             "1.3 Contact details: +40721373747, anudani241@hotmail.com"
         ]
     },
@@ -44,27 +44,27 @@ const termsData = [
         clauses: [
             "5.1 Guests are expected to respect the property, furnishings, and surroundings.",
             "5.2 Damages or losses caused by guests will be charged at repair or replacement cost.",
-            "5.3 LaDespani reserves the right to terminate the stay of guests causing a disturbance or engaging in inappropriate behavior, without refund."
+            "5.3 MangoRooms reserves the right to terminate the stay of guests causing a disturbance or engaging in inappropriate behavior, without refund."
         ]
     },
     {
         title: "6. Pets and Smoking Policy",
         clauses: [
-            "6.1 Pets are not allowed at LaDespani Guesthouse.",
+            "6.1 Pets are not allowed at MangoRooms Guesthouse.",
             "6.2 Smoking is strictly prohibited inside the guesthouse. Designated smoking areas are available outside the property."
         ]
     },
     {
         title: "7. Liability",
         clauses: [
-            "7.1 LaDespani Guesthouse is not responsible for accidents, injuries, or losses of personal belongings.",
+            "7.1 MangoRooms Guesthouse is not responsible for accidents, injuries, or losses of personal belongings.",
             "7.2 Guests are responsible for their own safety and the safety of minors or dependents traveling with them."
         ]
     },
     {
         title: "8. Force Majeure",
         clauses: [
-            "8.1 LaDespani is not liable for cancellations or changes due to events beyond our control, such as natural disasters, strikes, or other unforeseen events."
+            "8.1 MangoRooms is not liable for cancellations or changes due to events beyond our control, such as natural disasters, strikes, or other unforeseen events."
         ]
     },
     {

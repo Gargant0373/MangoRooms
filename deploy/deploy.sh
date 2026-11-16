@@ -10,9 +10,11 @@ set -euo pipefail
 main() {
   local repo_dir="${MR_REPO_DIR:-/root/MangoRooms}"
   local name="${MR_CONTAINER:-mangorooms}"
-  # Host port nginx proxies www.mangorooms.ro to. LaDespani uses 3000 on the
-  # same VPS. "127.0.0.1:3001" also works; the health check uses the port part.
-  local publish="${MR_PUBLISH:-3001}"
+  # Host port nginx proxies www.mangorooms.ro to (LaDespani uses 3000 on the
+  # same VPS). Bound to 127.0.0.1 only: Docker-published ports bypass ufw, so
+  # a bare "3001" would let anyone reach the origin directly, around
+  # Cloudflare. The health check uses the port part.
+  local publish="${MR_PUBLISH:-127.0.0.1:3001}"
   local repo_url="https://github.com/Gargant0373/MangoRooms.git"
   local branch="master"
   if command -v flock >/dev/null; then exec 9>/tmp/mangorooms-deploy.lock; flock 9; fi

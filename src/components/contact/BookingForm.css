@@ -1,133 +1,15 @@
-.booking-form {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-    gap: 18px 20px;
-
-    width: 100%;
-    max-width: 860px;
-    margin: 0 auto;
-    align-items: start;
-    text-align: left;
-}
-
-/* Each field wrapper */
-.booking-form > div {
+.booking-request {
     display: flex;
     flex-direction: column;
-    gap: 6px;
-    width: 100%;
-}
-
-.booking-form label {
-    font-size: 0.85rem;
-    font-weight: 700;
-    letter-spacing: 0.06em;
-    text-transform: uppercase;
-    color: var(--ink-soft);
-}
-
-/* Ensure text inputs/textarea fill width but not checkboxes */
-.booking-form input:not([type="checkbox"]),
-.booking-form textarea {
-    width: 100%;
-    padding: 12px 14px;
-    border-radius: var(--radius-sm);
-    border: 1.5px solid rgba(41, 47, 48, 0.18);
-    box-sizing: border-box;
-
-    font-family: var(--font-body);
-    font-size: 1rem;
-    background-color: var(--white);
-    color: var(--ink);
-
-    transition:
-        border-color 0.25s ease,
-        box-shadow 0.25s ease;
-}
-
-.booking-form input::placeholder,
-.booking-form textarea::placeholder {
-    color: rgba(41, 47, 48, 0.4);
-}
-
-.booking-form textarea {
-    min-height: 110px;
-    resize: vertical;
-}
-
-/* Focus only for text-like inputs/textarea */
-.booking-form input:not([type="checkbox"]):focus,
-.booking-form textarea:focus {
-    outline: none;
-    border-color: var(--dark-orange);
-    box-shadow: 0 0 0 4px rgba(255, 140, 0, 0.15);
-}
-
-/* Checkbox sizing & alignment */
-.booking-form__checkbox {
-    width: 18px;
-    height: 18px;
-    accent-color: var(--dark-orange);
-    cursor: pointer;
-}
-
-.booking-form__error {
-    margin: 0;
-    font-size: 0.85rem;
-    color: #c0392b;
-}
-
-.booking-form__terms .terms {
-    color: var(--dark-orange);
-    font-weight: 700;
-    cursor: pointer;
-    text-decoration: underline;
-}
-
-/* Make Email row span full width so it isn't cramped */
-.booking-form > div:nth-of-type(7) {
-    grid-column: 1 / -1;
-}
-
-/* Make long rows span full width (Description, Terms) */
-.booking-form > div:nth-of-type(8),
-.booking-form > div:nth-of-type(9) {
-    grid-column: 1 / -1;
-}
-
-/* Terms row horizontally aligned */
-.booking-form > div:nth-of-type(9) {
-    flex-direction: row;
     align-items: center;
-    flex-wrap: wrap;
-    gap: 10px;
+    gap: 14px;
 }
 
-.booking-form > div:nth-of-type(9) label {
-    text-transform: none;
-    letter-spacing: normal;
-    font-weight: 400;
-    font-size: 0.95rem;
-    color: var(--ink);
-}
-
-/* Captcha centered and full-width */
-.booking-form .captcha-container {
-    grid-column: 1 / -1;
-    display: flex;
-    justify-content: center;
-}
-
-/* Submit button centered and consistent size */
-.booking-form button {
-    position: relative;
+.booking-request__button {
     padding: 0 40px;
     height: 52px;
     border-radius: 999px;
     border: none;
-
-    justify-self: center;
-    grid-column: 1 / -1;
 
     background: linear-gradient(135deg, var(--dark-orange) 0%, var(--orange) 100%);
     color: #fff;
@@ -144,18 +26,33 @@
         box-shadow 0.25s var(--ease-out);
 }
 
-.booking-form button:hover {
+.booking-request__button:hover {
     transform: translateY(-2px) scale(1.02);
     box-shadow: var(--shadow-orange);
 }
 
-.booking-form button:active {
+.booking-request__button:active {
     transform: translateY(0) scale(0.98);
 }
 
-/* Small screens: ensure comfortable spacing */
-@media (max-width: 480px) {
-    .booking-form {
-        gap: 14px 16px;
-    }
+.booking-request__button:focus-visible {
+    outline: 3px solid var(--dark-orange);
+    outline-offset: 3px;
+}
+
+.booking-request__terms {
+    margin: 0;
+    font-size: 0.95rem;
+    color: var(--ink-soft);
+}
+
+.booking-request__link {
+    padding: 0;
+    border: none;
+    background: none;
+    font: inherit;
+    color: var(--dark-orange);
+    font-weight: 700;
+    text-decoration: underline;
+    cursor: pointer;
 }

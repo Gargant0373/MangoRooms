@@ -13,9 +13,10 @@ npm run build    # type-check, build and prerender into dist/
 npm run lint
 ```
 
-The booking form needs the EmailJS and reCAPTCHA keys in `.env`
-(`VITE_EMAILJS_SERVICE_ID`, `VITE_EMAILJS_TEMPLATE_ID`, `VITE_EMAILJS_USER_ID`,
-`VITE_CAPTCHA_SITE_KEY`). `.env` is not committed.
+Booking requests go through the [ajuns.ro](https://ajuns.ro) widget. Its script
+is loaded in [`index.html`](index.html) with `data-button="none"`, and any element
+with a `data-ajuns-open` attribute (the button on the Contact page) opens the
+request form in an overlay. No keys or `.env` are needed.
 
 ### Pages, prerendering and the sitemap
 

@@ -1,6 +1,6 @@
 # A host-built node_modules (e.g. sharp's native binary) must not leak into the
-# Alpine image. .env is deliberately NOT ignored: Vite bakes its VITE_* keys
-# (EmailJS, reCAPTCHA) into the bundle at build time.
+# Alpine image. .env is deliberately NOT ignored: Vite bakes any VITE_* keys
+# into the bundle at build time.
 node_modules
 dist
 dist-ssr

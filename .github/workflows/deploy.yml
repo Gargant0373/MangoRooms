@@ -1,0 +1,41 @@
+name: Deploy
+on:
+  push:
+    branches: [master]
+  workflow_dispatch:
+concurrency:
+  group: production
+  cancel-in-progress: false
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    environment:
+      name: production
+      url: https://www.mangorooms.ro
+    steps:
+      # The deploy key is pinned to deploy/deploy.sh in authorized_keys, so this
+      # sends no command: the server runs the script and streams its output.
+      - name: Build and restart on the VPS
+        env:
+          SSH_KEY: ${{ secrets.DEPLOY_SSH_KEY }}
+          KNOWN_HOSTS: ${{ secrets.DEPLOY_KNOWN_HOSTS }}
+          HOST: ${{ secrets.DEPLOY_HOST }}
+        run: |
+          install -m 700 -d ~/.ssh
+          printf '%s\n' "$SSH_KEY" > ~/.ssh/deploy_key
+          chmod 600 ~/.ssh/deploy_key
+          printf '%s\n' "$KNOWN_HOSTS" > ~/.ssh/known_hosts
+          ssh -T -i ~/.ssh/deploy_key -o IdentitiesOnly=yes -o StrictHostKeyChecking=yes "root@$HOST"
+      # Through Cloudflare and nginx: a route must serve its own prerendered
+      # page, and unknown URLs must be 404s. This catches a server that falls
+      # back to the homepage for every URL, which still returns 200 everywhere.
+      - name: Check the live site
+        run: |
+          site=https://www.mangorooms.ro
+          url=$(curl -fsS "$site/sitemap.xml" | grep -o '<loc>[^<]*' | sed -n 2p | cut -c6-)
+          [ -n "$url" ] || { echo "::error::$site/sitemap.xml has no 2nd <loc>"; exit 1; }
+          curl -fsS "$url" | grep -qF "rel=\"canonical\" href=\"$url\"" \
+            || { echo "::error::$url is not serving its own prerendered page"; exit 1; }
+          code=$(curl -s -o /dev/null -w '%{http_code}' "$site/__deploy-check__")
+          [ "$code" = 404 ] || { echo "::error::unknown URLs return $code instead of 404"; exit 1; }

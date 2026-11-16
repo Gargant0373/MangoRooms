@@ -3,7 +3,7 @@ import Hero from "../components/Hero";
 import { useState } from "react";
 import useScrollReveal from "../hooks/useScrollReveal";
 import "./Rooms.css";
-import { Helmet } from 'react-helmet-async'
+import Seo from "../components/Seo";
 
 enum Facilities {
     WIFI = "Wi-Fi",
@@ -103,11 +103,11 @@ function Rooms() {
     useScrollReveal();
 
     return <>
-        <Helmet>
-            <title>Cozy Rooms in Brașov – MangoRooms Guesthouse</title>
-            <meta name="description" content="Five cozy guesthouse rooms in Brașov, each with a private bathroom, Wi-Fi and TV. Options for families, couples, solo travellers and backpackers on a budget." />
-            <link rel="canonical" href="https://www.mangorooms.ro/rooms" />
-        </Helmet>
+        <Seo
+            title="Cozy Rooms in Brașov – MangoRooms Guesthouse"
+            description="Five cozy guesthouse rooms in Brașov, each with a private bathroom, Wi-Fi and TV. Options for families, couples, solo travellers and backpackers on a budget."
+            path="/rooms"
+        />
         <Hero image="./images/rooms.webp" description="Your home in Brasov!" />
         <section id="rooms">
             <div className="text reveal">

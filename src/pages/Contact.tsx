@@ -2,18 +2,18 @@ import BookingForm from "../components/contact/BookingForm";
 import Footer from "../components/Footer";
 import Hero from "../components/Hero";
 import useScrollReveal from "../hooks/useScrollReveal";
-import { Helmet } from 'react-helmet-async'
+import Seo from "../components/Seo";
 import "./Contact.css";
 
 function Contact() {
     useScrollReveal();
 
     return <>
-        <Helmet>
-            <title>Contact & Booking – MangoRooms Guesthouse Brașov</title>
-            <meta name="description" content="Book your stay at MangoRooms, a cozy motorcycle-friendly guesthouse in Brașov. Address, phone, email and booking request form — we reply in English and nine other languages." />
-            <link rel="canonical" href="https://www.mangorooms.ro/contact" />
-        </Helmet>
+        <Seo
+            title="Contact & Booking – MangoRooms Guesthouse Brașov"
+            description="Book your stay at MangoRooms, a cozy motorcycle-friendly guesthouse in Brașov. Address, phone, email and booking request form — we reply in English and nine other languages."
+            path="/contact"
+        />
         <Hero image="./images/contact.webp" description="Should I stay or should I manGO?" />
         <section id="contact">
             <div className="text reveal">

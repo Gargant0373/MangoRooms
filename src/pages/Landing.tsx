@@ -1,4 +1,4 @@
-import { Helmet } from 'react-helmet-async';
+import Seo from "../components/Seo";
 import Footer from "../components/Footer";
 import Hero from "../components/Hero";
 import Note from "../components/landing/Note";
@@ -26,11 +26,11 @@ function Landing() {
     useScrollReveal();
 
     return <>
-        <Helmet>
-            <title>MangoRooms – Cozy Motorcycle-Friendly Guesthouse in Brașov</title>
-            <meta name="description" content="Cozy, motorcycle-friendly guesthouse in Brașov, Romania. Family-run since 2007, welcoming international travellers and backpackers with private bathrooms and secure parking near the old town." />
-            <link rel="canonical" href="https://www.mangorooms.ro/" />
-        </Helmet>
+        <Seo
+            title="MangoRooms – Cozy Motorcycle-Friendly Guesthouse in Brașov"
+            description="Cozy, motorcycle-friendly guesthouse in Brașov, Romania. Family-run since 2007, welcoming international travellers and backpackers with private bathrooms and secure parking near the old town."
+            path="/"
+        />
         <Hero image="./images/landing.webp" description="The definition of cozy!" />
         <section id="landing">
             <div className="text reveal">

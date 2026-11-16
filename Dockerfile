@@ -1,9 +1,26 @@
+# Node 20, not 18 like LaDespani: react-router-dom 7 requires Node >= 20, and
+# the build-time prerender runs the app in Node.
 FROM node:20-alpine AS build
 
 WORKDIR /app
-COPY . /app
-RUN npm install
-RUN npm i -g serve
+# Dependencies first, so this layer stays cached until package-lock.json changes.
+COPY package.json package-lock.json ./
+RUN npm ci
+COPY . .
 RUN npm run build
-EXPOSE 3001
-CMD ["serve", "-s", "dist", "-l", "3001"]
+
+# Only the built site and the web server ship. node_modules stays in the build
+# stage, which keeps the image small on a VPS that several sites share.
+FROM node:20-alpine
+
+WORKDIR /app
+# Pinned: serve.json uses serve 14's config format.
+RUN npm i -g serve@14
+COPY --from=build /app/dist ./dist
+COPY serve.json ./
+EXPOSE 3000
+# Never add -s (single-page mode): it rewrites every extensionless URL to the
+# root index.html, so the prerendered page in dist/<route>/index.html is never
+# served and unknown URLs return the homepage with a 200 instead of 404.html.
+# Redirects and headers live in serve.json (resolved relative to dist/).
+CMD ["serve", "dist", "-l", "3000", "-c", "../serve.json"]

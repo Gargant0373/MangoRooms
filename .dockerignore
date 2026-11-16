@@ -1,27 +1,17 @@
-# Dependencies
+# A host-built node_modules (e.g. sharp's native binary) must not leak into the
+# Alpine image. .env is deliberately NOT ignored: Vite bakes its VITE_* keys
+# (EmailJS, reCAPTCHA) into the bundle at build time.
 node_modules
-
-# Build output
-/dist
-/build
-/.vite
-
-# Logs
-npm-debug.log*
-yarn-debug.log*
-yarn-error.log*
-pnpm-debug.log*
-
-# VCS
+dist
+dist-ssr
 .git
-.gitignore
+# No full-size image originals to exclude: scripts/convert-images.mjs replaces
+# them with .webp in public/images, which is what the build uses.
 
 # Editor/system
 .vscode
 .idea
 .DS_Store
-
-# Misc caches
 coverage
 .cache
-tmp
+npm-debug.log*

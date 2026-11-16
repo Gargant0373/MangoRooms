@@ -2,17 +2,17 @@ import Footer from "../components/Footer";
 import Hero from "../components/Hero";
 import useScrollReveal from "../hooks/useScrollReveal";
 import "./About.css";
-import { Helmet } from 'react-helmet-async'
+import Seo from "../components/Seo";
 
 function About() {
     useScrollReveal();
 
     return <>
-        <Helmet>
-            <title>About MangoRooms – Family-Run Guesthouse in Brașov</title>
-            <meta name="description" content="The story of MangoRooms: a family of travellers running a cozy guesthouse in Brașov since 2007, welcoming backpackers, motorcycle riders and international guests in ten languages." />
-            <link rel="canonical" href="https://www.mangorooms.ro/about" />
-        </Helmet>
+        <Seo
+            title="About MangoRooms – Family-Run Guesthouse in Brașov"
+            description="The story of MangoRooms: a family of travellers running a cozy guesthouse in Brașov since 2007, welcoming backpackers, motorcycle riders and international guests in ten languages."
+            path="/about"
+        />
         <Hero image="./images/about.webp" description="Your place to sleep on the manGO!" />
         <section id="about">
             <div className="text reveal">

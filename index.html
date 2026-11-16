@@ -10,25 +10,21 @@
   <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
   <link rel="manifest" href="/site.webmanifest" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>MangoRooms – Cozy Motorcycle-Friendly Guesthouse in Brașov</title>
-  <meta name="description" content="Cozy, motorcycle-friendly guesthouse in Brașov, Romania. Family-run since 2007, we welcome international travellers and backpackers with comfortable rooms, private bathrooms and secure parking near the old town." />
-  <link rel="canonical" href="https://www.mangorooms.ro/" />
-  <meta name="robots" content="index,follow" />
   <meta name="theme-color" content="#FF8C00" />
+  <!-- Per-page title, description, robots, canonical and og/twitter text are
+       written here at build time by scripts/vite-plugin-prerender.mjs. -->
+  <!--app-head-->
+  <!-- Content is revealed on scroll by JavaScript; without it, show everything. -->
+  <noscript><style>.reveal{opacity:1 !important;transform:none !important}</style></noscript>
 
   <!-- Open Graph -->
   <meta property="og:site_name" content="MangoRooms" />
   <meta property="og:type" content="website" />
   <meta property="og:locale" content="en_US" />
-  <meta property="og:title" content="MangoRooms – Cozy Motorcycle-Friendly Guesthouse in Brașov" />
-  <meta property="og:description" content="Family-run guesthouse for international travellers and backpackers. Cozy rooms with private bathrooms, secure motorcycle parking, walking distance to Brașov old town." />
   <meta property="og:image" content="https://www.mangorooms.ro/images/landing.webp" />
-  <meta property="og:url" content="https://www.mangorooms.ro/" />
 
   <!-- Twitter -->
   <meta name="twitter:card" content="summary_large_image" />
-  <meta name="twitter:title" content="MangoRooms – Cozy Motorcycle-Friendly Guesthouse in Brașov" />
-  <meta name="twitter:description" content="Family-run guesthouse for international travellers and backpackers. Cozy rooms, private bathrooms, secure motorcycle parking near Brașov old town." />
   <meta name="twitter:image" content="https://www.mangorooms.ro/images/landing.webp" />
 
   <script type="application/ld+json">
@@ -68,7 +64,7 @@
 </head>
 
 <body>
-  <div id="root"></div>
+  <div id="root"><!--app-html--></div>
   <script type="module" src="/src/main.tsx"></script>
 </body>
 

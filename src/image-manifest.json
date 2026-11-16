@@ -1,0 +1,225 @@
+{
+  "/images/about.webp": {
+    "width": 1024,
+    "height": 682,
+    "widths": [
+      480,
+      960
+    ]
+  },
+  "/images/about2.webp": {
+    "width": 2040,
+    "height": 1536,
+    "widths": [
+      480,
+      960,
+      1600
+    ]
+  },
+  "/images/balcony.webp": {
+    "width": 1365,
+    "height": 853,
+    "widths": [
+      480,
+      960
+    ]
+  },
+  "/images/contact.webp": {
+    "width": 2048,
+    "height": 1365,
+    "widths": [
+      480,
+      960,
+      1600
+    ]
+  },
+  "/images/kitchen.webp": {
+    "width": 2048,
+    "height": 1365,
+    "widths": [
+      480,
+      960,
+      1600
+    ]
+  },
+  "/images/landing.webp": {
+    "width": 2048,
+    "height": 1365,
+    "widths": [
+      480,
+      960,
+      1600
+    ]
+  },
+  "/images/rooms.webp": {
+    "width": 2048,
+    "height": 1365,
+    "widths": [
+      480,
+      960,
+      1600
+    ]
+  },
+  "/images/rooms/1_1.webp": {
+    "width": 2048,
+    "height": 1365,
+    "widths": [
+      480,
+      960,
+      1600
+    ]
+  },
+  "/images/rooms/1_2.webp": {
+    "width": 2048,
+    "height": 1365,
+    "widths": [
+      480,
+      960,
+      1600
+    ]
+  },
+  "/images/rooms/1_3.webp": {
+    "width": 2048,
+    "height": 1365,
+    "widths": [
+      480,
+      960,
+      1600
+    ]
+  },
+  "/images/rooms/1_4.webp": {
+    "width": 2048,
+    "height": 1365,
+    "widths": [
+      480,
+      960,
+      1600
+    ]
+  },
+  "/images/rooms/2_1.webp": {
+    "width": 2048,
+    "height": 1365,
+    "widths": [
+      480,
+      960,
+      1600
+    ]
+  },
+  "/images/rooms/2_2.webp": {
+    "width": 2048,
+    "height": 1365,
+    "widths": [
+      480,
+      960,
+      1600
+    ]
+  },
+  "/images/rooms/2_3.webp": {
+    "width": 2048,
+    "height": 1365,
+    "widths": [
+      480,
+      960,
+      1600
+    ]
+  },
+  "/images/rooms/2_4.webp": {
+    "width": 2048,
+    "height": 1365,
+    "widths": [
+      480,
+      960,
+      1600
+    ]
+  },
+  "/images/rooms/3_1.webp": {
+    "width": 2048,
+    "height": 1365,
+    "widths": [
+      480,
+      960,
+      1600
+    ]
+  },
+  "/images/rooms/3_2.webp": {
+    "width": 2048,
+    "height": 1365,
+    "widths": [
+      480,
+      960,
+      1600
+    ]
+  },
+  "/images/rooms/3_3.webp": {
+    "width": 2048,
+    "height": 1365,
+    "widths": [
+      480,
+      960,
+      1600
+    ]
+  },
+  "/images/rooms/3_4.webp": {
+    "width": 2048,
+    "height": 1365,
+    "widths": [
+      480,
+      960,
+      1600
+    ]
+  },
+  "/images/rooms/4_1.webp": {
+    "width": 2048,
+    "height": 1365,
+    "widths": [
+      480,
+      960,
+      1600
+    ]
+  },
+  "/images/rooms/4_2.webp": {
+    "width": 2048,
+    "height": 1365,
+    "widths": [
+      480,
+      960,
+      1600
+    ]
+  },
+  "/images/rooms/4_3.webp": {
+    "width": 2048,
+    "height": 1365,
+    "widths": [
+      480,
+      960,
+      1600
+    ]
+  },
+  "/images/rooms/5_1.webp": {
+    "width": 2048,
+    "height": 1365,
+    "widths": [
+      480,
+      960,
+      1600
+    ]
+  },
+  "/images/rooms/5_2.webp": {
+    "width": 2048,
+    "height": 1365,
+    "widths": [
+      480,
+      960,
+      1600
+    ]
+  },
+  "/images/rooms/5_3.webp": {
+    "width": 2048,
+    "height": 1365,
+    "widths": [
+      480,
+      960,
+      1600
+    ]
+  }
+}

@@ -43,7 +43,9 @@
     padding: 48px 44px;
 }
 
-.card .text h1 {
+.card .text h3 {
+    font-family: var(--font-display);
+    font-weight: 700;
     position: relative;
     font-size: clamp(1.6rem, 1.3rem + 1.2vw, 2.1rem);
     margin: 0;
@@ -52,7 +54,7 @@
     color: var(--green);
 }
 
-.card .text h1::after {
+.card .text h3::after {
     content: "";
     position: absolute;
     left: 0;
@@ -151,7 +153,7 @@
         align-items: center;
     }
 
-    .card .text h1::after {
+    .card .text h3::after {
         left: 50%;
         transform: translateX(-50%);
     }

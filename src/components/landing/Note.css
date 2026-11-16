@@ -39,7 +39,9 @@
     padding: 48px 44px;
 }
 
-.note .left h1 {
+.note .left h3 {
+    font-family: var(--font-display);
+    font-weight: 700;
     position: relative;
     font-size: clamp(1.6rem, 1.3rem + 1.2vw, 2.1rem);
     margin: 0;
@@ -49,7 +51,7 @@
 }
 
 /* Short accent bar under the title */
-.note .left h1::after {
+.note .left h3::after {
     content: "";
     position: absolute;
     left: 0;
@@ -100,7 +102,7 @@
         text-align: center;
     }
 
-    .note .left h1::after {
+    .note .left h3::after {
         left: 50%;
         transform: translateX(-50%);
     }

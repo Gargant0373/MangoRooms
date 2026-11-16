@@ -13,11 +13,16 @@ function NotFound() {
             noindex
         />
         {/* Absolute path: the 404 page is served at any depth, e.g. /a/b/c. */}
-        <Hero image="/images/landing.webp" description="Oops, this page went on a ride without us." />
+        <Hero
+            image="/images/landing.webp"
+            imageAlt="Raspberries ripening on the bush"
+            heading="Page not found"
+            description="Oops, this page went on a ride without us."
+        />
         <section id="not-found">
             <div className="text">
                 <span className="kicker">404</span>
-                <h3>We couldn't find that page</h3>
+                <h2>We couldn't find that page</h2>
                 <p>The link may be old or mistyped. <Link to="/">Go to the homepage</Link> or <Link to="/rooms">see our rooms</Link>.</p>
             </div>
             <Footer />

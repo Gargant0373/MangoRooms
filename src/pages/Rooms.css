@@ -137,7 +137,9 @@
     padding: 0 0.5rem;
 }
 
-.room .room-details h1 {
+.room .room-details h3 {
+    font-family: var(--font-display);
+    font-weight: 700;
     font-size: 1.6rem;
     margin: 0 0 0.6rem;
     color: var(--green);
@@ -205,7 +207,7 @@
         height: 42px;
     }
 
-    .room .room-details h1 {
+    .room .room-details h3 {
         font-size: 1.35rem;
     }
 
@@ -219,7 +221,7 @@
         padding: 0.85rem 0.85rem 1.5rem;
     }
 
-    .room .room-details h1 {
+    .room .room-details h3 {
         font-size: 1.2rem;
     }
 }

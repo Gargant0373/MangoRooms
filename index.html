@@ -30,28 +30,273 @@
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
-    "@type": "BedAndBreakfast",
-    "name": "MangoRooms",
-    "description": "Cozy, motorcycle-friendly, family-run guesthouse in Brașov, Romania, welcoming international travellers and backpackers since 2007.",
-    "image": ["https://www.mangorooms.ro/images/landing.webp"],
-    "address": {
-      "@type": "PostalAddress",
-      "streetAddress": "Mihai Viteazul 128",
-      "postalCode": "500183",
-      "addressLocality": "Brașov",
-      "addressCountry": "RO"
-    },
-    "hasMap": "https://maps.app.goo.gl/xDLBLkZsb61cQ6eh8",
-    "telephone": "+40721373747",
-    "email": "anudani241@hotmail.com",
-    "url": "https://www.mangorooms.ro/",
-    "foundingDate": "2007",
-    "knowsLanguage": ["en", "ro", "de", "it", "es", "fr", "et", "ru", "fi"],
-    "amenityFeature": [
-      { "@type": "LocationFeatureSpecification", "name": "Secure motorcycle parking", "value": true },
-      { "@type": "LocationFeatureSpecification", "name": "Free Wi-Fi", "value": true },
-      { "@type": "LocationFeatureSpecification", "name": "Private bathrooms", "value": true },
-      { "@type": "LocationFeatureSpecification", "name": "Shared kitchen", "value": true }
+    "@graph": [
+      {
+        "@type": "BedAndBreakfast",
+        "name": "MangoRooms",
+        "description": "Cozy, motorcycle-friendly, family-run guesthouse in Brașov, Romania, welcoming international travellers and backpackers since 2007.",
+        "image": [
+          "https://www.mangorooms.ro/images/landing.webp",
+          "https://www.mangorooms.ro/images/rooms.webp",
+          "https://www.mangorooms.ro/images/balcony.webp",
+          "https://www.mangorooms.ro/images/kitchen.webp",
+          "https://www.mangorooms.ro/images/rooms/1_1.webp",
+          "https://www.mangorooms.ro/images/rooms/3_1.webp"
+        ],
+        "address": {
+          "@type": "PostalAddress",
+          "streetAddress": "Mihai Viteazul 128",
+          "postalCode": "500183",
+          "addressLocality": "Brașov",
+          "addressCountry": "RO"
+        },
+        "hasMap": "https://maps.app.goo.gl/xDLBLkZsb61cQ6eh8",
+        "telephone": "+40721373747",
+        "email": "anudani241@hotmail.com",
+        "url": "https://www.mangorooms.ro/",
+        "foundingDate": "2007",
+        "knowsLanguage": [
+          "en",
+          "ro",
+          "de",
+          "it",
+          "es",
+          "fr",
+          "et",
+          "ru",
+          "fi"
+        ],
+        "amenityFeature": [
+          {
+            "@type": "LocationFeatureSpecification",
+            "name": "Secure motorcycle parking",
+            "value": true
+          },
+          {
+            "@type": "LocationFeatureSpecification",
+            "name": "Free Wi-Fi",
+            "value": true
+          },
+          {
+            "@type": "LocationFeatureSpecification",
+            "name": "Private bathrooms",
+            "value": true
+          },
+          {
+            "@type": "LocationFeatureSpecification",
+            "name": "Shared kitchen",
+            "value": true
+          }
+        ],
+        "@id": "https://www.mangorooms.ro/#guesthouse",
+        "geo": {
+          "@type": "GeoCoordinates",
+          "latitude": 45.659903,
+          "longitude": 25.589266
+        },
+        "numberOfRooms": 5,
+        "containsPlace": [
+          {
+            "@type": "HotelRoom",
+            "name": "Grand Mango I",
+            "occupancy": {
+              "@type": "QuantitativeValue",
+              "maxValue": 3
+            },
+            "bed": "1 queen bed and 1 single bed",
+            "amenityFeature": [
+              {
+                "@type": "LocationFeatureSpecification",
+                "name": "Private bathroom",
+                "value": true
+              },
+              {
+                "@type": "LocationFeatureSpecification",
+                "name": "Wi-Fi",
+                "value": true
+              },
+              {
+                "@type": "LocationFeatureSpecification",
+                "name": "Television",
+                "value": true
+              },
+              {
+                "@type": "LocationFeatureSpecification",
+                "name": "Desk",
+                "value": true
+              },
+              {
+                "@type": "LocationFeatureSpecification",
+                "name": "Bathtub",
+                "value": true
+              },
+              {
+                "@type": "LocationFeatureSpecification",
+                "name": "Shower",
+                "value": true
+              }
+            ]
+          },
+          {
+            "@type": "HotelRoom",
+            "name": "Grand Mango II",
+            "occupancy": {
+              "@type": "QuantitativeValue",
+              "maxValue": 3
+            },
+            "bed": "1 queen bed and 1 single bed",
+            "amenityFeature": [
+              {
+                "@type": "LocationFeatureSpecification",
+                "name": "Private bathroom",
+                "value": true
+              },
+              {
+                "@type": "LocationFeatureSpecification",
+                "name": "Wi-Fi",
+                "value": true
+              },
+              {
+                "@type": "LocationFeatureSpecification",
+                "name": "Television",
+                "value": true
+              },
+              {
+                "@type": "LocationFeatureSpecification",
+                "name": "Desk",
+                "value": true
+              },
+              {
+                "@type": "LocationFeatureSpecification",
+                "name": "Bathtub",
+                "value": true
+              },
+              {
+                "@type": "LocationFeatureSpecification",
+                "name": "Shower",
+                "value": true
+              }
+            ]
+          },
+          {
+            "@type": "HotelRoom",
+            "name": "Mango I",
+            "occupancy": {
+              "@type": "QuantitativeValue",
+              "maxValue": 2
+            },
+            "bed": "1 double bed",
+            "amenityFeature": [
+              {
+                "@type": "LocationFeatureSpecification",
+                "name": "Private bathroom",
+                "value": true
+              },
+              {
+                "@type": "LocationFeatureSpecification",
+                "name": "Wi-Fi",
+                "value": true
+              },
+              {
+                "@type": "LocationFeatureSpecification",
+                "name": "Television",
+                "value": true
+              },
+              {
+                "@type": "LocationFeatureSpecification",
+                "name": "Desk",
+                "value": true
+              },
+              {
+                "@type": "LocationFeatureSpecification",
+                "name": "Shower",
+                "value": true
+              }
+            ]
+          },
+          {
+            "@type": "HotelRoom",
+            "name": "Mango II",
+            "occupancy": {
+              "@type": "QuantitativeValue",
+              "maxValue": 2
+            },
+            "amenityFeature": [
+              {
+                "@type": "LocationFeatureSpecification",
+                "name": "Private bathroom",
+                "value": true
+              },
+              {
+                "@type": "LocationFeatureSpecification",
+                "name": "Wi-Fi",
+                "value": true
+              },
+              {
+                "@type": "LocationFeatureSpecification",
+                "name": "Television",
+                "value": true
+              },
+              {
+                "@type": "LocationFeatureSpecification",
+                "name": "Desk",
+                "value": true
+              },
+              {
+                "@type": "LocationFeatureSpecification",
+                "name": "Shower",
+                "value": true
+              }
+            ]
+          },
+          {
+            "@type": "HotelRoom",
+            "name": "Petite Mango",
+            "occupancy": {
+              "@type": "QuantitativeValue",
+              "maxValue": 2
+            },
+            "bed": "2 single beds",
+            "amenityFeature": [
+              {
+                "@type": "LocationFeatureSpecification",
+                "name": "Private bathroom",
+                "value": true
+              },
+              {
+                "@type": "LocationFeatureSpecification",
+                "name": "Wi-Fi",
+                "value": true
+              },
+              {
+                "@type": "LocationFeatureSpecification",
+                "name": "Television",
+                "value": true
+              },
+              {
+                "@type": "LocationFeatureSpecification",
+                "name": "Desk",
+                "value": true
+              },
+              {
+                "@type": "LocationFeatureSpecification",
+                "name": "Shower",
+                "value": true
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "@type": "WebSite",
+        "@id": "https://www.mangorooms.ro/#website",
+        "url": "https://www.mangorooms.ro/",
+        "name": "MangoRooms",
+        "inLanguage": "en",
+        "publisher": {
+          "@id": "https://www.mangorooms.ro/#guesthouse"
+        }
+      }
     ]
   }
   </script>

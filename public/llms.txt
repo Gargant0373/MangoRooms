@@ -1,0 +1,16 @@
+# MangoRooms
+
+> Family-run, motorcycle-friendly guesthouse in Brașov, Romania, welcoming international travellers, backpackers and riders since 2007.
+
+- Address: Mihai Viteazul 128, 500183 Brașov, Romania
+- Phone: +40 721 373 747
+- Rooms: 5, each with a private bathroom, Wi-Fi, TV and a desk
+- Secure indoor parking for motorcycles and bicycles can be arranged
+- Languages spoken: Romanian, English, German, Italian, Spanish, French, Estonian, Russian, Finnish
+- Booking: send a request through the form on the contact page
+
+## Pages
+
+- [Rooms](https://www.mangorooms.ro/rooms): Grand Mango I and II (up to 3 guests, bathtub), Mango I and II (2 guests), Petite Mango (2 guests, budget)
+- [About](https://www.mangorooms.ro/about): the Estonian-Romanian family behind the guesthouse
+- [Contact & booking](https://www.mangorooms.ro/contact): address, phone, email and booking request form

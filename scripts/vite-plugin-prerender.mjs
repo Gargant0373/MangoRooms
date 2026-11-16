@@ -16,14 +16,13 @@ import { pathToFileURL } from 'node:url';
 
 const SSR_OUT = 'dist-ssr';
 
-function sitemap(mod, lastmod) {
+function sitemap(mod) {
   const entries = mod.routes
     .filter((r) => r.indexable)
     .map((r) =>
       [
         '  <url>',
         `    <loc>${mod.ORIGIN}${r.path}</loc>`,
-        `    <lastmod>${lastmod}</lastmod>`,
         `    <changefreq>${r.changefreq}</changefreq>`,
         `    <priority>${r.priority}</priority>`,
         '  </url>',
@@ -105,8 +104,9 @@ export function prerender() {
       // stops unknown URLs from looking like copies of the homepage.
       writeFileSync(join(outDir, '404.html'), page(mod.render('/__not-found__')));
 
-      const lastmod = new Date().toISOString().slice(0, 10);
-      writeFileSync(join(outDir, 'sitemap.xml'), sitemap(mod, lastmod));
+      // No <lastmod>: the build date is not when a page's content changed, and
+      // Google stops trusting lastmod values that are always "today".
+      writeFileSync(join(outDir, 'sitemap.xml'), sitemap(mod));
 
       rmSync(ssrDir, { recursive: true, force: true });
 

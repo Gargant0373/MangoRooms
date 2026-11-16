@@ -27,8 +27,6 @@ function Navbar() {
             <ul
                 id="primary-navigation"
                 className={`nav-links ${isOpen ? "open" : ""}`}
-                role="menu"
-                aria-hidden={!isOpen}
             >
                 <li><Link to="/" onClick={() => setIsOpen(false)}>Home</Link></li>
                 <li><Link to="/about" onClick={() => setIsOpen(false)}>About</Link></li>

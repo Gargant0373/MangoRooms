@@ -13,12 +13,18 @@ function Contact() {
             title="Contact & Booking – MangoRooms Guesthouse Brașov"
             description="Book your stay at MangoRooms, a cozy motorcycle-friendly guesthouse in Brașov. Address, phone, email and booking request form — we reply in English and nine other languages."
             path="/contact"
+            breadcrumb="Contact & booking"
         />
-        <Hero image="./images/contact.webp" description="Should I stay or should I manGO?" />
+        <Hero
+            image="/images/contact.webp"
+            imageAlt="Wooden MANGO sign beside the garden path"
+            heading="Book your stay in Brașov"
+            description="Should I stay or should I manGO?"
+        />
         <section id="contact">
             <div className="text reveal">
                 <span className="kicker">Contact & booking</span>
-                <h3>Do not hesitate to ask!</h3>
+                <h2>Do not hesitate to ask!</h2>
             </div>
             <div className="info">
                 <a className="info-card reveal" href="https://maps.app.goo.gl/xDLBLkZsb61cQ6eh8" target="_blank" rel="noopener noreferrer">

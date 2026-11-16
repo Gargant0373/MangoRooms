@@ -4,6 +4,7 @@ import { useState } from "react";
 import useScrollReveal from "../hooks/useScrollReveal";
 import "./Rooms.css";
 import Seo from "../components/Seo";
+import ResponsiveImage from "../components/ResponsiveImage";
 
 enum Facilities {
     WIFI = "Wi-Fi",
@@ -107,12 +108,18 @@ function Rooms() {
             title="Cozy Rooms in Brașov – MangoRooms Guesthouse"
             description="Five cozy guesthouse rooms in Brașov, each with a private bathroom, Wi-Fi and TV. Options for families, couples, solo travellers and backpackers on a budget."
             path="/rooms"
+            breadcrumb="Rooms"
         />
-        <Hero image="./images/rooms.webp" description="Your home in Brasov!" />
+        <Hero
+            image="/images/rooms.webp"
+            imageAlt="Orange day lilies in bloom"
+            heading="Rooms at our Brașov guesthouse"
+            description="Your home in Brașov!"
+        />
         <section id="rooms">
             <div className="text reveal">
                 <span className="kicker">Our rooms</span>
-                <h3>Cozy, clean and ready for you!</h3>
+                <h2>Cozy, clean and ready for you!</h2>
                 <p>Every room comes with a private bathroom, Wi-Fi and TV — whether you are a family on holiday, a couple, a backpacker or a rider passing through Brașov.</p>
             </div>
             <div className="rooms">
@@ -132,11 +139,11 @@ function Room(props: RoomProp) {
         <div className="room reveal">
             <div className="room-images">
                 <div className="main-image">
-                    <img
+                    <ResponsiveImage
                         key={selectedImage}
-                        src={`./images/rooms/${selectedImage}`}
-                        alt={`${props.name} – cozy guesthouse room at MangoRooms Brașov`}
-                        loading="lazy"
+                        src={`/images/rooms/${selectedImage}`}
+                        alt={`${props.name} – guest room at MangoRooms Brașov`}
+                        sizes="(max-width: 768px) 92vw, 520px"
                     />
                     <span className="capacity-badge">
                         {props.capacity} {props.capacity === 1 ? "guest" : "guests"}
@@ -144,11 +151,11 @@ function Room(props: RoomProp) {
                 </div>
                 <div className="thumbnail-images">
                     {props.images.map((image, index) => (
-                        <img
+                        <ResponsiveImage
                             key={index}
-                            src={`./images/rooms/${image}`}
-                            alt={`${props.name} thumbnail ${index + 1}`}
-                            loading="lazy"
+                            src={`/images/rooms/${image}`}
+                            alt={`${props.name}, photo ${index + 1}`}
+                            sizes="80px"
                             className={selectedImage === image ? "active" : ""}
                             onClick={() => setSelectedImage(image)}
                         />
@@ -156,7 +163,7 @@ function Room(props: RoomProp) {
                 </div>
             </div>
             <div className="room-details">
-                <h1>{props.name}</h1>
+                <h3>{props.name}</h3>
                 <p>{props.description}</p>
                 <p className="room-extra">{props.kidsBed ? "Extra bed for children available on request." : "No extra bed for children available."}</p>
                 <ul>

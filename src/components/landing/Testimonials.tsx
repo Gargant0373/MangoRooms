@@ -7,16 +7,8 @@ const testimonials = [
         text: "The place was amazing and so were the hosts."
     },
     {
-        name: "Alexander the Great",
-        text: "I conquered the world, but nothing compares to the taste of this mango.",
-    },
-    {
         name: "Victor Mazilescu",
         text: "Beautiful hosts and great location. Fair prices, clean and welcoming!"
-    },
-    {
-        name: "Julius Caesar",
-        text: "Veni, Vidi, Mango! I came, I saw, I tasted the best mango.",
     },
     {
         name: "Patricia Istrate",
